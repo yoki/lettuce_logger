@@ -11,6 +11,18 @@ A tiny logger with a `pp()` function.
 
 ---
 
+## Installation
+
+Install directly from GitHub with a version tag:
+
+```bash
+pip install git+https://github.com/yoki/lettuce_logger.git@v0.1.0
+```
+
+
+---
+
+Let me know if you’re planning to publish it on PyPI later—then we can include a different installation line.
 ## Usage for small project
 
 ```python
