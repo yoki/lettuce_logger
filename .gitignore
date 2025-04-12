@@ -1,1 +1,3 @@
 __pycache__/
+*pyc
+lettuce_logger.egg-info
