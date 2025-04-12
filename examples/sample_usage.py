@@ -22,3 +22,19 @@ hide_pp()
 pp("dont show me")
 show_pp()
 pp("show me")
+
+
+def my_function():
+    def _nested():
+        pp("message from nested function")
+
+    pp("message from my function")
+    _nested()
+
+
+my_function()
+
+
+from lettuce_logger import get_log_dir
+
+print(f"Log is saved to {get_log_dir()}")

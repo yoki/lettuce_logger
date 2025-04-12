@@ -16,9 +16,9 @@ A tiny logger with a `pp()` function.
 Install directly from GitHub with a version tag:
 
 ```bash
-pip install git+https://github.com/yoki/lettuce_logger.git@v0.1.0
+pip install git+https://github.com/yoki/lettuce_logger.git@v0.1.x
 ```
-
+(fix version number)
 
 ---
 
@@ -40,6 +40,9 @@ hide_pp()
 pp("this will not be shown")
 show_pp()
 pp("this will")
+
+from lettuce_logger import get_log_dir
+print(f"Log is saved to {get_log_dir()}")
 ```
 
 ---
@@ -81,3 +84,14 @@ If project is `"proj123"` and name is `"worker"`:
 - Can be turned on/off with `.show_pp()` and `.hide_pp()`
 
 ---
+
+
+## Memo for dev
+
+```
+$ git clone git+https://github.com/yoki/lettuce_logger.git@v0.1.x
+$ pip install -e .
+$ python examples/sample_usage.py
+$ git tag v0.1.1 -m "Bugfix"
+$ git push origin v0.1.1
+```
