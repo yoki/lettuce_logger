@@ -48,7 +48,7 @@ class LettuceLogger(logging.Logger):
             "%(asctime)s|%(filename)s:%(lineno)d|%(levelname)s: %(message)s",
             "%m-%d %H:%M:%S",
         )
-        console_formatter = logging.Formatter("%(funcName)s@%(filename)s:%(lineno)d| %(message)s", "%m-%d %H:%M:%S")
+        console_formatter = IpythonCellFormatter("%(funcName)s@%(filename)s:%(lineno)d| %(message)s", "%m-%d %H:%M:%S")
 
         stream_handler = logging.StreamHandler()
         stream_handler.setLevel(logging.NOTSET)
@@ -77,6 +77,16 @@ class LettuceLogger(logging.Logger):
     def hide_pp(self):
         self.setLevel(logging.INFO)
         self.stream_handler.setLevel(logging.INFO)
+
+
+import traceback
+
+
+class IpythonCellFormatter(logging.Formatter):
+    def format(self, record):
+        if "ipython-input" in record.filename:
+            record.filename = "ipy"
+        return super().format(record)
 
 
 # --------------------------

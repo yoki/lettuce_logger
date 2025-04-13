@@ -1,4 +1,10 @@
+# %%
 from lettuce_logger import pp, show_pp, get_logger, hide_pp  # noqa: F401
+
+pp("hello world")
+
+
+# %%
 
 
 df = {
@@ -38,3 +44,5 @@ my_function()
 from lettuce_logger import get_log_dir
 
 print(f"Log is saved to {get_log_dir()}")
+
+# %%
